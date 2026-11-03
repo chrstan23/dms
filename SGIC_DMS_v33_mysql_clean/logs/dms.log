@@ -1,0 +1,85 @@
+2026-10-30 11:46:54,650 INFO waitress: Serving on http://0.0.0.0:5000
+2026-10-30 11:54:31,643 INFO sgic: Login ok: IT (Administrator) from 192.168.0.195
+2026-10-30 11:56:51,991 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 13:02:24,318 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 13:06:58,282 INFO waitress: Serving on http://0.0.0.0:5000
+2026-10-30 13:07:05,611 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 13:08:50,292 INFO waitress: Serving on http://0.0.0.0:5000
+2026-10-30 13:08:52,480 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 13:11:29,582 INFO waitress: Serving on http://0.0.0.0:5000
+2026-10-30 13:11:41,004 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 13:16:46,276 INFO waitress: Serving on http://0.0.0.0:5000
+2026-10-30 13:17:41,214 INFO sgic: Login ok: PCBA-QPE (Requestor) from 192.168.0.202
+2026-10-30 13:20:19,757 INFO waitress: Serving on http://0.0.0.0:5000
+2026-10-30 13:20:29,337 WARNING sgic: Login failed for 'IT' from 192.168.0.202
+2026-10-30 13:20:39,788 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 13:23:01,418 WARNING sgic: Login failed for 'DCC' from 192.168.0.250
+2026-10-30 13:23:11,420 INFO sgic: Login ok: DCC (DCC) from 192.168.0.250
+2026-10-30 13:35:49,352 INFO sgic: Login ok: ADMR (ADMR) from 192.168.0.250
+2026-10-30 13:43:10,523 INFO sgic: Login ok: AGMR (AGMR) from 192.168.0.250
+2026-10-30 13:43:11,949 INFO sgic: Login ok: AGMR (AGMR) from 192.168.0.250
+2026-10-30 13:48:14,936 ERROR app: Exception on /master/1793338014963-eba85f/pdf [GET]
+Traceback (most recent call last):
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\SGIC_DMS_v33_mysql_clean\app.py", line 568, in inner
+    return fn(*a, **kw)
+  File "C:\SGIC_DMS_v33_mysql_clean\app.py", line 1286, in document_pdf
+    resp = send_file(path, mimetype="application/pdf", as_attachment=False,
+                     download_name=att["name"], conditional=True)
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\helpers.py", line 518, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **_prepare_send_file_kwargs(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\werkzeug\utils.py", line 421, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\SGIC_DMS_v33_mysql_clean\\pdf_documents\\PROCEDURE TEMPLATE\\ATM-IE\\PR-BI00000_ATM Warehouse Operation Procedure_02.pdf'
+2026-10-30 13:48:14,946 ERROR sgic: Unhandled error ref=3A79FB on /master/1793338014963-eba85f/pdf
+Traceback (most recent call last):
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\SGIC_DMS_v33_mysql_clean\app.py", line 568, in inner
+    return fn(*a, **kw)
+  File "C:\SGIC_DMS_v33_mysql_clean\app.py", line 1286, in document_pdf
+    resp = send_file(path, mimetype="application/pdf", as_attachment=False,
+                     download_name=att["name"], conditional=True)
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\flask\helpers.py", line 518, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **_prepare_send_file_kwargs(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\SGIC_DMS_v33_mysql_clean\venv\Lib\site-packages\werkzeug\utils.py", line 421, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\SGIC_DMS_v33_mysql_clean\\pdf_documents\\PROCEDURE TEMPLATE\\ATM-IE\\PR-BI00000_ATM Warehouse Operation Procedure_02.pdf'
+2026-10-30 13:55:23,357 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 14:02:13,366 INFO sgic: Login ok: IT (Administrator) from 192.168.0.250
+2026-10-30 14:49:45,088 INFO waitress: Serving on http://0.0.0.0:5000
+2026-10-30 14:49:57,438 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
+2026-10-30 15:08:06,838 INFO waitress: Serving on http://0.0.0.0:5000
+2026-11-03 10:28:29,564 INFO waitress: Serving on http://0.0.0.0:5000
+2026-11-03 10:29:29,483 INFO sgic: Login ok: IT (Administrator) from 192.168.0.202
